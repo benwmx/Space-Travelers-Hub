@@ -1,7 +1,12 @@
 import React from 'react';
+import MyMissions from './MyMissions';
+import MyRockets from './MyRockets';
 
 const MyProfile = () => (
-  <h1>My Profile Under construction 👷 </h1>
+  <div className="container">
+    <MyMissions />
+    <MyRockets />
+  </div>
 );
 
 export default MyProfile;
