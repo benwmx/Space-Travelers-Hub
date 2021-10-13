@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import Mission from './Mission';
 import { getListOfMissions } from '../../redux/missions/missions';
 import Styles from './mission.module.scss';
@@ -10,7 +10,7 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getListOfMissions());
+    if (missions.length === 0) dispatch(getListOfMissions());
   }, []);
   return (
     <table className={Styles.missionsTable}>
