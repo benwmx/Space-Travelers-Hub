@@ -1,11 +1,11 @@
-const TOGGLE_MESSION_RESERVATION = 'TOGGLE_MESSION_RESERVATION';
+const TOGGLE_MESSION_JOIN = 'TOGGLE_MESSION_JOIN';
 const ADD_LIST_OF_MISSIONS_TO_STORE = 'ADD_LIST_OF_MISSIONS_TO_STORE';
 
 const url = 'https://api.spacexdata.com/v3/missions';
 const initialState = [];
 
 const toggleMissionReservation = (payload) => ({
-  type: TOGGLE_MESSION_RESERVATION,
+  type: TOGGLE_MESSION_JOIN,
   payload,
 });
 
@@ -18,6 +18,7 @@ const filterMissionsData = (data) => data.map((mission) => ({
   id: mission.mission_id,
   name: mission.mission_name,
   description: mission.description,
+  joined: true,
 }));
 
 // redux thunks middlewares for adding/getting/removing books from the API.
@@ -32,9 +33,9 @@ const getListOfMissions = () => (dispatch) => {
 //
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TOGGLE_MESSION_RESERVATION: return state.map((mission) => {
+    case TOGGLE_MESSION_JOIN: return state.map((mission) => {
       if (mission.id !== action.payload) return mission;
-      return { ...mission, reserved: !mission.reserved };
+      return { ...mission, joined: !mission.joined };
     });
     case ADD_LIST_OF_MISSIONS_TO_STORE: return action.payload;
     default: return state;
