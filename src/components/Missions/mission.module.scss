@@ -5,15 +5,16 @@
   border-collapse: collapse;
   background-color: rgb(253, 253, 253);
   opacity: 0.9;
+  box-shadow: 5px 5px 10px  rgb(148, 148, 145);
 
   .headTable {
-    background-color: rgb(196, 218, 218);
+    background-color: #f32c03;
     font-weight: bold;
     font-size: 1.2rem;
   }
 
   td {
-    border: 1px solid rgb(146, 142, 142);
+    border: 3px solid #d43212;
     padding: 10px;
   }
 
