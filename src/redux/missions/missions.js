@@ -31,7 +31,7 @@ const getListOfMissions = () => (dispatch) => {
 };
 //
 const missionsReducer = (state = initialState, action) => {
-  switch (state.type) {
+  switch (action.type) {
     case TOGGLE_MESSION_RESERVATION: return state.map((mission) => {
       if (mission.id !== action.payload) return mission;
       return { ...mission, reserved: !mission.reserved };
