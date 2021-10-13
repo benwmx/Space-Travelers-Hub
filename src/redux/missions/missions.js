@@ -18,7 +18,7 @@ const filterMissionsData = (data) => data.map((mission) => ({
   id: mission.mission_id,
   name: mission.mission_name,
   description: mission.description,
-  joined: true,
+  joined: false,
 }));
 
 // redux thunks middlewares for adding/getting/removing books from the API.
