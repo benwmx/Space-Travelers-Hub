@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { toggleMissionJoin } from '../../redux/missions/missions';
+import Styles from './mission.module.scss';
 
 const Mission = (props) => {
   const { missionInfo } = props;
@@ -12,19 +13,21 @@ const Mission = (props) => {
   };
 
   return (
-    <tr>
-      <td>{missionInfo.name}</td>
-      <td>{missionInfo.description}</td>
+    <tr className={missionInfo.joined && Styles.joined}>
+      <td><p className={Styles.missionName}>{missionInfo.name}</p></td>
+      <td className={Styles.description}>{missionInfo.description}</td>
       <td>
         {
-          (missionInfo.joined) ? <p className="activeMember">Active Member</p> : <p className="notMemeber">Not A Member</p>
+          (missionInfo.joined)
+            ? <p className={Styles.activeMember}>Active Member</p>
+            : <p className={Styles.notMember}>Not A Member</p>
         }
       </td>
       <td>
         {
           (missionInfo.joined)
-            ? <button type="button" className="leaveMission" onClick={toggleJoin}> Leave Mission </button>
-            : <button type="button" className="joinMission" onClick={toggleJoin}> Join Mission </button>
+            ? <button type="button" className={Styles.leaveMission} onClick={toggleJoin}> Leave Mission </button>
+            : <button type="button" className={Styles.joinMission} onClick={toggleJoin}> Join Mission </button>
         }
       </td>
     </tr>

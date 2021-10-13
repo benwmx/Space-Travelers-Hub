@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Mission from './Mission';
 import { getListOfMissions } from '../../redux/missions/missions';
+import Styles from './mission.module.scss';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions);
@@ -12,13 +13,13 @@ const Missions = () => {
     dispatch(getListOfMissions());
   }, []);
   return (
-    <table>
-      <thead>
+    <table className={Styles.missionsTable}>
+      <thead className={Styles.headTable}>
         <tr>
           <td>Mission</td>
           <td>Description</td>
           <td>Status</td>
-          <td>Are you Joined</td>
+          <td>Join</td>
         </tr>
       </thead>
       <tbody>
