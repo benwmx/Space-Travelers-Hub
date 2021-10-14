@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
+import Error from './components/Error';
 import Missions from './components/Missions';
 import Rockets from './components/Rockets';
 import MyProfile from './components/MyProfile';
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route path="/myprofile">
           <MyProfile />
+        </Route>
+        <Route path="*">
+          <Error />
         </Route>
       </Switch>
     </Router>
