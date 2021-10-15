@@ -1,16 +1,26 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import {
+  useSelector, useDispatch, shallowEqual,
+} from 'react-redux';
+import HashLoader from 'react-spinners/HashLoader';
 import Mission from './Mission';
 import { getListOfMissions } from '../../redux/missions/missions';
 import Styles from './mission.module.scss';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (missions.length === 0) dispatch(getListOfMissions());
+    if (missions.length === 0) {
+      setLoading(true);
+      dispatch(getListOfMissions());
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    }
   }, []);
   return (
     <table className={Styles.missionsTable}>
@@ -22,9 +32,11 @@ const Missions = () => {
           <td>Join</td>
         </tr>
       </thead>
-      <tbody>
+      <tbody className={loading && Styles.loadingTable}>
         {
-          missions.map((mission) => (<Mission key={mission.id} missionInfo={mission} />))
+        (loading)
+          ? <HashLoader color="#f32c03" loading={loading} size={150} className={Styles.loading} />
+          : missions.map((mission) => (<Mission key={mission.id} missionInfo={mission} />))
         }
       </tbody>
     </table>
