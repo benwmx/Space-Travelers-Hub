@@ -1,1 +1,11 @@
-/* Empty */
+@import url('https://cdn-ec853.web.app/css/style.css');
+
+.btn {
+  border-radius: 8px;
+  background-color: rgb(30, 144, 255);
+  color: #fff;
+}
+
+.bg-reserved {
+  background-color: rgb(1, 177, 119);
+}
