@@ -9,9 +9,9 @@ const Rockets = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(async () => {
+  useEffect(() => {
     if (mRockets.length === 0) {
-      dispatch(await getRockets());
+      dispatch(getRockets());
     }
   }, []);
 
@@ -25,7 +25,7 @@ const Rockets = () => {
             name={rocket.name}
             description={rocket.description}
             image={rocket.image}
-            reserve={rocket.reserved}
+            reserved={rocket.reserved}
           />
         ))
       }

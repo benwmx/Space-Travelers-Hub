@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { reserveRocket, fooBar } from '../../redux/rockets/rockets';
+import { reserveRocket, cancelReservation } from '../../redux/rockets/rockets';
 
 const Rocket = ({
-  id, name, description, image, reserve,
+  id, name, description, image, reserved,
 }) => {
   const dispatch = useDispatch();
 
@@ -13,7 +13,7 @@ const Rocket = ({
   };
 
   const cancelHandler = () => {
-    dispatch(fooBar(id));
+    dispatch(cancelReservation(id));
   };
 
   return (
@@ -26,7 +26,7 @@ const Rocket = ({
 
         <p className="padding-y-sm">
           {
-            (reserve)
+            (reserved)
               ? <span className="chip text-sm bg-success"><i className="chip__label">Chip</i></span>
               : <span />
           }
@@ -34,7 +34,7 @@ const Rocket = ({
         </p>
 
         {
-          (reserve)
+          (reserved)
             ? <button id={id} className="btn btn--lg" type="button" onClick={cancelHandler}>Cancel Reservation</button>
             : <button id={id} className="btn btn--lg" type="button" onClick={reserveHandler}>Reserve Rocket</button>
         }
@@ -48,7 +48,7 @@ Rocket.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  reserve: PropTypes.bool,
+  reserved: PropTypes.bool,
 };
 
 Rocket.defaultProps = {
@@ -56,7 +56,7 @@ Rocket.defaultProps = {
   name: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  reserve: PropTypes.bool,
+  reserved: PropTypes.bool,
 };
 
 export default Rocket;
