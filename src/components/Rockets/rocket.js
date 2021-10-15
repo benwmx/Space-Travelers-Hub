@@ -1,33 +1,62 @@
-// import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { reserveRocket, fooBar } from '../../redux/rockets/rockets';
 
 const Rocket = ({
-  id, name, description, image,
-}) => (
-  <div className="grid" id={id}>
-    <div className="col-3">
-      <img alt="Rocket" src={image} />
+  id, name, description, image, reserve,
+}) => {
+  const dispatch = useDispatch();
+
+  const reserveHandler = () => {
+    dispatch(reserveRocket(id));
+  };
+
+  const cancelHandler = () => {
+    dispatch(fooBar(id));
+  };
+
+  return (
+    <div className="grid">
+      <div className="col-3">
+        <img alt="Rocket" src={image} />
+      </div>
+      <div className="col-9">
+        <h3>{name}</h3>
+
+        <p className="padding-y-sm">
+          {
+            (reserve)
+              ? <span className="chip text-sm"><i className="chip__label">Chip</i></span>
+              : <span />
+          }
+          {description}
+        </p>
+
+        {
+          (reserve)
+            ? <button id={id} className="btn btn--lg" type="button" onClick={cancelHandler}>Cancel Reservation</button>
+            : <button id={id} className="btn btn--lg" type="button" onClick={reserveHandler}>Reserve Rocket</button>
+        }
+      </div>
     </div>
-    <div className="col-9">
-      <h3>{name}</h3>
-      <p className="padding-y-sm">{description}</p>
-      <button className="btn btn--lg" type="button">Reserve Rocket</button>
-    </div>
-  </div>
-);
+  );
+};
 
 Rocket.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   name: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
+  reserve: PropTypes.bool,
 };
 
 Rocket.defaultProps = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   name: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
+  reserve: PropTypes.bool,
 };
 
 export default Rocket;

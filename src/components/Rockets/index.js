@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Rocket from './rocket';
@@ -10,13 +11,22 @@ const Rockets = () => {
     dispatch(await getRockets());
   }, []);
 
-  const rockets = useSelector((state) => state.rockets);
-
-  const rocketsList = rockets.map((rocket) => <Rocket key={rocket.id} id="jj" name={rocket.rocket_name} description={rocket.description} image={rocket.flickr_images[0]} />);
+  const mRockets = useSelector((state) => state.rockets);
 
   return (
     <div className="container">
-      {rocketsList}
+      {
+        mRockets.map((rocket) => (
+          <Rocket
+            key={rocket.id}
+            id={rocket.id}
+            name={rocket.name}
+            description={rocket.description}
+            image={rocket.image}
+            reserve={rocket.reserved}
+          />
+        ))
+      }
     </div>
   );
 };
