@@ -17,7 +17,7 @@ const Rocket = ({
   };
 
   return (
-    <div className="grid">
+    <div className="grid gap-sm margin-bottom-sm bg-contrast-medium">
       <div className="col-3">
         <img alt="Rocket" src={image} />
       </div>
@@ -27,7 +27,7 @@ const Rocket = ({
         <p className="padding-y-sm">
           {
             (reserve)
-              ? <span className="chip text-sm"><i className="chip__label">Chip</i></span>
+              ? <span className="chip text-sm bg-success"><i className="chip__label">Chip</i></span>
               : <span />
           }
           {description}

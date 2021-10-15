@@ -5,13 +5,15 @@ import Rocket from './rocket';
 import { getRockets } from '../../redux/rockets/rockets';
 
 const Rockets = () => {
+  const mRockets = useSelector((state) => state.rockets);
+
   const dispatch = useDispatch();
 
   useEffect(async () => {
-    dispatch(await getRockets());
+    if (mRockets.length === 0) {
+      dispatch(await getRockets());
+    }
   }, []);
-
-  const mRockets = useSelector((state) => state.rockets);
 
   return (
     <div className="container">

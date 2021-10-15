@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getReservedRockets } from '../../redux/rockets/rockets';
+// import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+// import { getReservedRockets } from '../../redux/rockets/rockets';
 
 const MyRockets = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getReservedRockets());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getReservedRockets());
+  // }, []);
 
   const mRockets = useSelector((state) => state.rockets);
 
