@@ -18,6 +18,16 @@
     padding: 10px;
   }
 
+  .loadingTable {
+    width: 100%;
+    min-height: 20rem;
+    margin-left: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .missionName {
     width: 8rem;
     font-size: 1.2rem;
