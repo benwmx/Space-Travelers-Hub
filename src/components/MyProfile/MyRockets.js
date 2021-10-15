@@ -1,15 +1,7 @@
-// import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-// import { getReservedRockets } from '../../redux/rockets/rockets';
 
 const MyRockets = () => {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(getReservedRockets());
-  // }, []);
-
-  const mRockets = useSelector((state) => state.rockets);
+  const mRockets = useSelector((state) => state.rockets.filter((rocket) => rocket.reserved));
 
   return (
     <div className="myMissionsContainer">

@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { reserveRocket, cancelReservation } from '../../redux/rockets/rockets';
+import Styles from './rocket.module.scss';
 
 const Rocket = ({
   id, name, description, image, reserved,
@@ -17,17 +19,17 @@ const Rocket = ({
   };
 
   return (
-    <div className="grid gap-sm margin-bottom-sm bg-contrast-medium">
-      <div className="col-3">
-        <img alt="Rocket" src={image} />
+    <div className={(reserved) ? Styles.reserved : Styles.rocket}>
+      <div>
+        <img className={Styles.image} alt="Rocket" src={image} />
       </div>
-      <div className="col-9">
-        <h3>{name}</h3>
+      <div className={Styles.info}>
+        <h2>{name}</h2>
 
-        <p className="padding-y-sm">
+        <p className={Styles.description}>
           {
             (reserved)
-              ? <span className="chip text-sm bg-success"><i className="chip__label">Chip</i></span>
+              ? <span className={Styles.badge}>Reserved</span>
               : <span />
           }
           {description}
@@ -35,8 +37,8 @@ const Rocket = ({
 
         {
           (reserved)
-            ? <button id={id} className="btn btn--lg" type="button" onClick={cancelHandler}>Cancel Reservation</button>
-            : <button id={id} className="btn btn--lg" type="button" onClick={reserveHandler}>Reserve Rocket</button>
+            ? <button id={id} className={Styles.cancelReservation} type="button" onClick={cancelHandler}>Cancel Reservation</button>
+            : <button id={id} className={Styles.reserveRocket} type="button" onClick={reserveHandler}>Reserve Rocket</button>
         }
       </div>
     </div>
@@ -44,19 +46,11 @@ const Rocket = ({
 };
 
 Rocket.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  reserved: PropTypes.bool,
-};
-
-Rocket.defaultProps = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  reserved: PropTypes.bool,
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Rocket;

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import {
-  useSelector, useDispatch, shallowEqual,
+  useSelector, useDispatch,
 } from 'react-redux';
 import HashLoader from 'react-spinners/HashLoader';
 import Mission from './Mission';

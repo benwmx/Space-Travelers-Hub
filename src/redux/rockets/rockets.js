@@ -31,7 +31,7 @@ const filterRocketsData = (data) => data.map((rocket) => ({
   name: rocket.rocket_name,
   description: rocket.description,
   image: rocket.flickr_images[0],
-  joined: false,
+  reserved: false,
 }));
 
 const getRockets = () => async (dispatch) => {
