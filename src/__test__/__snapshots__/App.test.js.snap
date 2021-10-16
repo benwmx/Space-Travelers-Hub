@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component test Should render 1`] = `
+Array [
+  <header
+    className="header"
+  >
+    <div
+      className="logo"
+    >
+      <img
+        alt="Yellow Planet"
+        src="logo.svg"
+        style={
+          Object {
+            "height": "50px",
+            "width": "50px",
+          }
+        }
+      />
+      <h1
+        className="title"
+      >
+        Space Travelers' Hub
+      </h1>
+    </div>
+    <div
+      className="navLinks"
+    >
+      <a
+        aria-current="page"
+        className="activeLink"
+        href="#/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Rockets
+      </a>
+      <a
+        aria-current={null}
+        href="#/missions"
+        onClick={[Function]}
+      >
+        Missions
+      </a>
+      <a
+        aria-current={null}
+        href="#/myprofile"
+        onClick={[Function]}
+      >
+        My profile
+        <span
+          className="numberOfSelected"
+        >
+          R(
+          0
+          ) M (
+          0
+          )
+        </span>
+      </a>
+    </div>
+  </header>,
+  <div
+    className="rocketsContainer"
+  >
+    <div
+      className="rocket"
+    >
+      <div>
+        <img
+          alt="Rocket"
+          className="image"
+          src=""
+        />
+      </div>
+      <div
+        className="info"
+      >
+        <h2>
+          
+        </h2>
+        <p
+          className="description"
+        >
+          <span />
+          
+        </p>
+        <button
+          className="reserveRocket"
+          id=""
+          onClick={[Function]}
+          type="button"
+        >
+          Reserve Rocket
+        </button>
+      </div>
+    </div>
+  </div>,
+]
+`;

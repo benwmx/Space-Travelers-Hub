@@ -1,0 +1,90 @@
+.missionsTable {
+  width: 90%;
+  margin: 50px auto;
+  border: 1px solid rgb(146, 142, 142);
+  border-collapse: collapse;
+  background-color: rgb(253, 253, 253);
+  opacity: 0.9;
+  box-shadow: 5px 5px 10px  rgb(148, 148, 145);
+
+  .headTable {
+    background-color: #f32c03;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  td {
+    border: 3px solid #d43212;
+    padding: 10px;
+  }
+
+  .loadingTable {
+    width: 100%;
+    min-height: 20rem;
+    margin-left: 145%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loadingTd {
+    border: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .missionName {
+    width: 8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .joined {
+    background-color: rgb(218, 214, 214);
+  }
+}
+
+@mixin badge ($color: DarkGray) {
+  display: block;
+  width: 8rem;
+  padding: 2px;
+  text-align: center;
+  background-color: $color;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.activeMember {
+  @include badge($color: #18a2b8);
+}
+
+.notMember {
+  @include badge();
+}
+
+@mixin joinBtn ($color: rgb(100, 100, 100)) {
+  width: 8rem;
+  padding: 5px;
+  font-size: 1rem;
+  color: $color;
+  border: 2px solid $color;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.joinMission {
+  @include joinBtn ();
+}
+
+.leaveMission {
+  @include joinBtn ($color: rgb(231, 43, 106));
+}

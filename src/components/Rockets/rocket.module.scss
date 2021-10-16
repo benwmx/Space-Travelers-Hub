@@ -1,0 +1,103 @@
+.rocketsContainer {
+  width: 90%;
+  margin: 50px auto;
+
+  .rocket {
+    border: 1px solid rgb(146, 142, 142);
+    background-color: rgba(253, 253, 253, 0.8);
+    box-shadow: 5px 5px 10px  rgb(148, 148, 145);
+    margin-top: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+
+    .image {
+      width: 400px;
+      height: 300px;
+      -webkit-border-radius: 6px 0 0 6px;
+      -moz-border-radius: 6px 0 0 6px;
+      -ms-border-radius: 6px 0 0 6px;
+      -o-border-radius: 6px 0 0 6px;
+      border-radius: 6px 0 0 6px;
+    }
+
+    .info {
+      width: 65%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+      margin-left: 20px;
+
+      h2 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .description {
+        margin: 0;
+        font-size: 1.5rem;
+
+        .badge {
+          width: 10rem;
+          padding: 6px;
+          margin-right: 6px;
+          background-color: #18a2b8;
+          color: white;
+          font-weight: bold;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .reserved {
+    @extend .rocket;
+
+    background-color: rgba(218, 214, 214, 0.8);
+  }
+}
+
+.loadingRockets {
+  width: 90%;
+  min-height: 20rem;
+  margin: 50px auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin reserveBtn($color: rgb(100, 100, 100)) {
+  width: 15rem;
+  height: 3rem;
+  padding: 5px;
+  font-size: 1rem;
+  border: 2px solid $color;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.cancelReservation {
+  @include reserveBtn();
+
+  color: rgb(100, 100, 100);
+}
+
+.reserveRocket {
+  @include reserveBtn($color: rgb(91, 80, 156));
+
+  color: white;
+  background-color: rgb(91, 80, 156);
+}

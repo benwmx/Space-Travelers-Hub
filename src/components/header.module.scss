@@ -1,0 +1,42 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #272f40;
+  opacity: 0.9;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    .title {
+      color: #f32c03;
+    }
+  }
+
+  .navLinks {
+    align-self: center;
+
+    a {
+      margin-right: 20px;
+      font-size: 1.2rem;
+      font-style: oblique;
+      color: #18a2b8;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .activeLink {
+      font-style: normal;
+      font-weight: bold;
+      color: #f32c03;
+    }
+
+    .numberOfSelected {
+      font-size: 0.9rem;
+      margin-left: 5px;
+      font-style: normal;
+      color: #e6b800;
+    }
+  }
+}
