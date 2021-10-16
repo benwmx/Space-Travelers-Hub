@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import HashLoader from 'react-spinners/HashLoader';
-import Rocket from './rocket';
+import Rocket from './Rocket';
 import { getRockets } from '../../redux/rockets/rockets';
 import Styles from './rocket.module.scss';
 
