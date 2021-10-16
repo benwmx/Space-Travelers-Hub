@@ -22,6 +22,10 @@ Hosted by Netlify
 ## Loading Data
 ![](./src/img/load-demo.gif)
 
+## Error Page
+
+![](./src/img/error-demo.gif)
+
 For loading Effect I used [React Spinners Library](https://www.npmjs.com/package/react-spinners)
 
 ## Getting Started
