@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Styles from './myProfile.module.scss';
 
 const MyMissions = () => {
   const myMissions = useSelector((state) => state.missions.filter((mission) => mission.joined));
   return (
-    <div className="myMissionsContainer">
-      <ul>
+    <div className={Styles.listContainer}>
+      <h2 className="d">My Missions</h2>
+      <ul className={Styles.list}>
         {
           myMissions.map((mission) => (
             <li key={mission.id}>
