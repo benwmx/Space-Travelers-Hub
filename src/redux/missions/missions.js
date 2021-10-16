@@ -2,7 +2,12 @@ const TOGGLE_MESSION_JOIN = 'TOGGLE_MESSION_JOIN';
 const ADD_LIST_OF_MISSIONS_TO_STORE = 'ADD_LIST_OF_MISSIONS_TO_STORE';
 
 const url = 'https://api.spacexdata.com/v3/missions';
-const initialState = [];
+const initialState = [{
+  id: '',
+  name: '',
+  description: '',
+  joined: false,
+}];
 
 const toggleMissionJoin = (payload) => ({
   type: TOGGLE_MESSION_JOIN,

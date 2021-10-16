@@ -5,7 +5,13 @@ const CANCEL_RESERVATION = 'space/rockets/CANCEL_RESERVATION';
 const GET_RESERVED_ROCKETS = 'space/rockets/GET_RESERVED_ROCKETS';
 
 const url = 'https://api.spacexdata.com/v3/rockets';
-const initialState = [];
+const initialState = [{
+  id: '',
+  name: '',
+  description: '',
+  image: '',
+  reserved: false,
+}];
 
 const reserveRocket = (id) => ({
   type: RESERVE_ROCKET,

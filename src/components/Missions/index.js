@@ -14,7 +14,7 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (missions.length === 0) {
+    if (missions.length === 1) {
       setLoading(true);
       dispatch(getListOfMissions());
       setTimeout(() => {

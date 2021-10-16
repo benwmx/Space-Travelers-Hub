@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -46,7 +45,7 @@ const Rocket = ({
 };
 
 Rocket.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,

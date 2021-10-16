@@ -13,7 +13,7 @@ const Rockets = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (rockets.length === 0) {
+    if (rockets.length === 1) {
       setLoading(true);
       dispatch(getRockets());
       setTimeout(() => {
