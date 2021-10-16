@@ -11,14 +11,24 @@
 ## Live demo
 Hosted by Netlify
 [Link](https://space-hub23.netlify.app/#/)
+## ScreenShots
+### Rockets
+![](./src/img/scr1.png)
+### Missions
+![](./src/img/scr2.png)
+### My Profile
+![](./src/img/scr3.png)
 
+## Loading Data
+![](./src/img/load-demo.gif)
+
+For loading Effect I used [React Spinners Library](https://www.npmjs.com/package/react-spinners)
+
+## Getting Started
 Note : 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template. to learn more about `React` visit this links :
 * [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-* To learn React, check out the [React documentation](https://reactjs.org/).
-
-## Getting Started
-
+* To learn React, check out the [React documentation](https://reactjs.org/)
 to use this repo please follow this steps : 
 
 ### Prerequisite
