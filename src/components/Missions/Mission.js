@@ -13,7 +13,7 @@ const Mission = (props) => {
   };
 
   return (
-    <tr className={missionInfo.joined && Styles.joined}>
+    <tr className={(missionInfo.joined) ? Styles.joined : undefined}>
       <td><p className={Styles.missionName}>{missionInfo.name}</p></td>
       <td className={Styles.description}>{missionInfo.description}</td>
       <td>

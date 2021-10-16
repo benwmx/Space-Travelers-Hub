@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import {
   useSelector, useDispatch,
@@ -32,10 +31,10 @@ const Missions = () => {
           <td>Join</td>
         </tr>
       </thead>
-      <tbody className={loading && Styles.loadingTable}>
+      <tbody className={(loading) ? Styles.loadingTable : undefined}>
         {
         (loading)
-          ? <HashLoader color="#f32c03" loading={loading} size={150} className={Styles.loading} />
+          ? <tr><td colSpan="4" className={Styles.loadingTd}><HashLoader color="#f32c03" loading={loading} size={150} className={Styles.loading} /></td></tr>
           : missions.map((mission) => (<Mission key={mission.id} missionInfo={mission} />))
         }
       </tbody>

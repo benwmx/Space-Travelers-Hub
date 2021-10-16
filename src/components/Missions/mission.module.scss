@@ -21,11 +21,17 @@
   .loadingTable {
     width: 100%;
     min-height: 20rem;
-    margin-left: 90%;
+    margin-left: 145%;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .loadingTd {
+    border: none;
+    width: 100%;
+    text-align: center;
   }
 
   .missionName {
