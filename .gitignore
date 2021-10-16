@@ -127,6 +127,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Add you ignorre files here
-package.json
-package-lock.json
 .env

@@ -7,15 +7,21 @@ const MyMissions = () => {
   return (
     <div className={Styles.listContainer}>
       <h2 className="d">My Missions</h2>
-      <ul className={Styles.list}>
-        {
-          myMissions.map((mission) => (
-            <li key={mission.id}>
-              {mission.name}
-            </li>
-          ))
-        }
-      </ul>
+      {
+        (myMissions.length === 0)
+          ? <p className={Styles.emptyList}>Empty 😢 </p>
+          : (
+            <ul className={Styles.list}>
+              {
+                myMissions.map((mission) => (
+                  <li key={mission.id}>
+                    {mission.name}
+                  </li>
+                ))
+              }
+            </ul>
+          )
+      }
     </div>
   );
 };

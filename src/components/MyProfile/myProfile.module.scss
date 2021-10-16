@@ -29,5 +29,19 @@
         font-size: 1.5rem;
       }
     }
+
+    .emptyList {
+      color: #f32c03;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(253, 253, 253, 0.8);
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
+      border-radius: 6px;
+    }
   }
 }
