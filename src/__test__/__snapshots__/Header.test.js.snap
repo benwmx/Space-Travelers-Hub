@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component test Should render 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="logo"
+  >
+    <img
+      alt="Yellow Planet"
+      src="logo.svg"
+      style={
+        Object {
+          "height": "50px",
+          "width": "50px",
+        }
+      }
+    />
+    <h1
+      className="title"
+    >
+      Space Travelers' Hub
+    </h1>
+  </div>
+  <div
+    className="navLinks"
+  >
+    <a
+      aria-current="page"
+      className="activeLink"
+      href="#/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      Rockets
+    </a>
+    <a
+      aria-current={null}
+      href="#/missions"
+      onClick={[Function]}
+    >
+      Missions
+    </a>
+    <a
+      aria-current={null}
+      href="#/myprofile"
+      onClick={[Function]}
+    >
+      My profile
+      <span
+        className="numberOfSelected"
+      >
+        R(
+        0
+        ) M (
+        0
+        )
+      </span>
+    </a>
+  </div>
+</header>
+`;

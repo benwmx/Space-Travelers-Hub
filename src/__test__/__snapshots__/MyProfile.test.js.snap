@@ -10,9 +10,11 @@ exports[`MyProfile Component test Should render 1`] = `
     <h2>
       My Rockets
     </h2>
-    <ul
-      className="list"
-    />
+    <p
+      className="emptyList"
+    >
+      Empty 😢 
+    </p>
   </div>
   <div
     className="listContainer"
@@ -22,7 +24,9 @@ exports[`MyProfile Component test Should render 1`] = `
     >
       My Missions
     </h2>
-    <p>
+    <p
+      className="emptyList"
+    >
       Empty 😢 
     </p>
   </div>
